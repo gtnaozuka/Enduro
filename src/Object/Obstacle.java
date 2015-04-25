@@ -3,6 +3,7 @@ package Object;
 import Entity.Point;
 import Util.GeomTransform;
 import Util.Util;
+import java.awt.Color;
 import java.awt.geom.GeneralPath;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,15 @@ import java.util.List;
 public class Obstacle implements Runnable {
     
     private double factor;
+    private final Color color;
     private final Thread tUpdateObstacle;
     
     private List<Point> points;
     private GeneralPath gp;
     
-    public Obstacle(double factor) {
+    public Obstacle(double factor, Color color) {
         this.factor = factor;
+        this.color = color;
         tUpdateObstacle = new Thread(this);
         
         initPoints();
@@ -61,5 +64,9 @@ public class Obstacle implements Runnable {
 
     public Thread gettUpdateObstacle() {
         return tUpdateObstacle;
+    }
+    
+    public Color getColor() {
+        return color;
     }
 }

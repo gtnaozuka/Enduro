@@ -61,14 +61,14 @@ public class Car {
         switch (keyCode) {
             case KeyEvent.VK_LEFT:
                 if (currentPos != Position.LEFT) {
-                    GeomTransform.translate(points, -200, 0);
+                    GeomTransform.translate(points, -235, 0);
                     update();
                     currentPos = getLeftPosition(currentPos);
                 }
                 break;
             case KeyEvent.VK_RIGHT:
                 if (currentPos != Position.RIGHT) {
-                    GeomTransform.translate(points, 200, 0);
+                    GeomTransform.translate(points, 235, 0);
                     update();
                     currentPos = getRightPosition(currentPos);
                 }
