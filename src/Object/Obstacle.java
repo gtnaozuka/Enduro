@@ -218,8 +218,10 @@ public class Obstacle implements Runnable {
     public void run() {
         while (body.getBounds2D().getMinY() <= Util.screensize.height) {
             scaleAll(1.03, 1.03);
-            translateAll(Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX() + 
-                    direction * Util.calculateDisplacement(obstacle.getBounds2D().getCenterY()), 0);
+            
+            double displacement = Util.calculateDisplacement(obstacle.getBounds2D().getCenterY());
+            translateAll((Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX()) + 
+                    direction * displacement, 0);
 
             Util.sleep(100);
         }

@@ -22,8 +22,8 @@ public class Util {
         double b0 = screensize.height - a0 * 225;
         double x0 = (y - b0) / a0;
         
-        double aF = (screensize.height - 130) / (-226);
-        double bF = screensize.height - aF * (screensize.width * 0.5 - 230);
+        double aF = -5;
+        double bF = 150 - aF * (screensize.width * 0.5 - 8);
         double xF = (y - bF) / aF;
         
         double m = (x0 + xF) * 0.5;
