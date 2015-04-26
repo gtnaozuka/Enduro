@@ -10,19 +10,21 @@ import java.util.List;
 
 public class Obstacle implements Runnable {
 
-    private double factor;
+    private double direction;
     private final Color color;
     private final boolean hasBody;
+    private final double factor;
     private final Thread tUpdateObstacle;
 
     private List<Point> obstaclePoints, hoodPoints, windowPoints, lightPoints,
             tirePoints, bodyPoints, platePoints;
     private GeneralPath obstacle, hood, window, light, tire, body, plate;
 
-    public Obstacle(double factor, Color color, boolean hasBody) {
-        this.factor = factor;
+    public Obstacle(double direction, Color color, boolean hasBody) {
+        this.direction = direction;
         this.color = color;
         this.hasBody = hasBody;
+        this.factor = Util.screensize.width * 0.0008;
         tUpdateObstacle = new Thread(this);
 
         init();
@@ -217,12 +219,12 @@ public class Obstacle implements Runnable {
     @Override
     public void run() {
         while (body.getBounds2D().getMinY() <= Util.screensize.height) {
-            factor *= 1.03;
-            scaleAll(1.03, 1.03);
+            direction *= factor;
+            scaleAll(factor, factor);
 
             double newCenter = (obstaclePoints.get(2).x + obstaclePoints.get(0).x) * 0.5;
             double oldCenter = obstacle.getBounds2D().getCenterX();
-            translateAll(oldCenter - newCenter + factor, 0);
+            translateAll(oldCenter - newCenter + direction, 0);
 
             Util.sleep(100);
         }

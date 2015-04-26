@@ -38,7 +38,7 @@ public class Car {
 
     public Car() {
         currentPos = Position.CENTER;
-        displacement = Util.screensize.width / 4.75;
+        displacement = Util.calculateDisplacement(Util.screensize.height - 150);
         init();
         update(true);
     }
