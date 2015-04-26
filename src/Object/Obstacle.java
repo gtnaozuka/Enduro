@@ -5,15 +5,15 @@ import Util.GeomTransform;
 import Util.Util;
 import java.awt.Color;
 import java.awt.geom.GeneralPath;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Obstacle implements Runnable {
 
-    private double direction;
+    private final double direction;
     private final Color color;
     private final boolean hasBody;
-    private final double factor;
     private final Thread tUpdateObstacle;
 
     private List<Point> obstaclePoints, hoodPoints, windowPoints, lightPoints,
@@ -24,7 +24,6 @@ public class Obstacle implements Runnable {
         this.direction = direction;
         this.color = color;
         this.hasBody = hasBody;
-        this.factor = Util.screensize.width * 0.0008;
         tUpdateObstacle = new Thread(this);
 
         init();
@@ -135,7 +134,6 @@ public class Obstacle implements Runnable {
 
         if (isInit) {
             scaleAll(0.5, 0.5);
-            update(false);
             translateAll(Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX(),
                     100 - obstacle.getBounds2D().getCenterY());
         }
@@ -219,12 +217,9 @@ public class Obstacle implements Runnable {
     @Override
     public void run() {
         while (body.getBounds2D().getMinY() <= Util.screensize.height) {
-            direction *= factor;
-            scaleAll(factor, factor);
-
-            double newCenter = (obstaclePoints.get(2).x + obstaclePoints.get(0).x) * 0.5;
-            double oldCenter = obstacle.getBounds2D().getCenterX();
-            translateAll(oldCenter - newCenter + direction, 0);
+            scaleAll(1.03, 1.03);
+            translateAll(Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX() + 
+                    direction * Util.calculateDisplacement(obstacle.getBounds2D().getCenterY()), 0);
 
             Util.sleep(100);
         }
@@ -238,6 +233,7 @@ public class Obstacle implements Runnable {
         GeomTransform.scale(tirePoints, sx, sy);
         GeomTransform.scale(bodyPoints, sx, sy);
         GeomTransform.scale(platePoints, sx, sy);
+        update(false);
     }
 
     private void translateAll(double x, double y) {
