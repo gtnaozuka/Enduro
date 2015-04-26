@@ -8,37 +8,40 @@ import java.util.List;
 
 public class Mountain {
 
-    private List<Point> points;
-    private GeneralPath gp;
+    private List<Point> mountainPoints;
+    private GeneralPath mountain;
 
     public Mountain() {
-        initPoints();
+        init();
         update();
     }
 
-    private void initPoints() {
-        points = new ArrayList<>();
-        
-        points.add(new Point(Util.screensize.width * 0.5 - 150, 101));
-        points.add(new Point(Util.screensize.width * 0.5 - 50, 20));
-        points.add(new Point(Util.screensize.width * 0.5 + 50, 101));
-        
-        points.add(new Point(Util.screensize.width * 0.5 - 50, 101));
-        points.add(new Point(Util.screensize.width * 0.5 + 50, 10));
-        points.add(new Point(Util.screensize.width * 0.5 + 150, 101));
+    private void init() {
+        mountainPoints = new ArrayList<>();
+
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 20));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150, 100));
+
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50, 10));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 150, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 100));
     }
 
     private void update() {
-        gp = new GeneralPath();
+        mountain = new GeneralPath();
 
-        for (int i = 0; i < points.size(); i += 3) {
-            gp.moveTo(points.get(i).x, points.get(i).y);
-            gp.quadTo(points.get(i + 1).x, points.get(i + 1).y, 
-                    points.get(i + 2).x, points.get(i + 2).y);
+        for (int i = 0; i < mountainPoints.size(); i += 4) {
+            mountain.moveTo(mountainPoints.get(i).x, mountainPoints.get(i).y);
+            mountain.quadTo(mountainPoints.get(i + 1).x, mountainPoints.get(i + 1).y,
+                    mountainPoints.get(i + 2).x, mountainPoints.get(i + 2).y);
+            mountain.lineTo(mountainPoints.get(i + 3).x, mountainPoints.get(i + 3).y);
         }
     }
-    
-    public GeneralPath getGp() {
-        return gp;
+
+    public GeneralPath getMountain() {
+        return mountain;
     }
 }

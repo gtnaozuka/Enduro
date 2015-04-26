@@ -8,34 +8,34 @@ import java.util.List;
 
 public class Sky {
 
-    private List<Point> points;
-    private GeneralPath gp;
+    private List<Point> skyPoints;
+    private GeneralPath sky;
 
     public Sky() {
-        initPoints();
+        init();
         update();
     }
 
-    private void initPoints() {
-        points = new ArrayList<>();
+    private void init() {
+        skyPoints = new ArrayList<>();
 
-        points.add(new Point(0, 0));
-        points.add(new Point(Util.screensize.width, 0));
-        points.add(new Point(Util.screensize.width, 100));
-        points.add(new Point(0, 100));
-        points.add(new Point(0, 0));
+        skyPoints.add(new Point(0, 0));
+        skyPoints.add(new Point(Util.screensize.width, 0));
+        skyPoints.add(new Point(Util.screensize.width, 100));
+        skyPoints.add(new Point(0, 100));
+        skyPoints.add(new Point(0, 0));
     }
 
     private void update() {
-        gp = new GeneralPath();
+        sky = new GeneralPath();
 
-        gp.moveTo(points.get(0).x, points.get(0).y);
-        for (int i = 1; i < points.size(); i++) {
-            gp.lineTo(points.get(i).x, points.get(i).y);
+        sky.moveTo(skyPoints.get(0).x, skyPoints.get(0).y);
+        for (int i = 1; i < skyPoints.size(); i++) {
+            sky.lineTo(skyPoints.get(i).x, skyPoints.get(i).y);
         }
     }
 
-    public GeneralPath getGp() {
-        return gp;
+    public GeneralPath getSky() {
+        return sky;
     }
 }
