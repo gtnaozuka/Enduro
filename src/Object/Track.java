@@ -41,7 +41,7 @@ public class Track {
         linePoints.add(new Point(Util.screensize.width * 0.5 - 155, 770));
         linePoints.add(new Point(Util.screensize.width * 0.5 - 183, 890));
         linePoints.add(new Point(Util.screensize.width * 0.5 - 198, 950));
-        linePoints.add(new Point(Util.screensize.width * 0.5 - 210, 1000));
+        linePoints.add(new Point(Util.screensize.width * 0.5 - 230, Util.screensize.height));
 
         linePoints.add(new Point(Util.screensize.width * 0.5 + 4, 130));
         linePoints.add(new Point(Util.screensize.width * 0.5 + 8, 150));
@@ -60,7 +60,7 @@ public class Track {
         linePoints.add(new Point(Util.screensize.width * 0.5 + 155, 770));
         linePoints.add(new Point(Util.screensize.width * 0.5 + 183, 890));
         linePoints.add(new Point(Util.screensize.width * 0.5 + 198, 950));
-        linePoints.add(new Point(Util.screensize.width * 0.5 + 210, 1000));
+        linePoints.add(new Point(Util.screensize.width * 0.5 + 230, Util.screensize.height));
 
         linePoints.add(new Point(Util.screensize.width * 0.5 - 10, 100));
         linePoints.add(new Point(225, Util.screensize.height));

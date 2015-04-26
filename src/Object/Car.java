@@ -34,9 +34,11 @@ public class Car {
     private List<Point> carPoints, yellowLightPoints, redLightPoints, rearPoints,
             platePoints, tirePoints, windowPoints;
     private GeneralPath car, yellowLight, redLight, rear, plate, tire, window;
+    private final double displacement;
 
     public Car() {
         currentPos = Position.CENTER;
+        displacement = Util.screensize.width / 4.75;
         init();
         update(true);
     }
@@ -272,13 +274,13 @@ public class Car {
         switch (keyCode) {
             case KeyEvent.VK_LEFT:
                 if (currentPos != Position.LEFT) {
-                    translateAll(-235, 0);
+                    translateAll(-displacement, 0);
                     currentPos = getLeftPosition(currentPos);
                 }
                 break;
             case KeyEvent.VK_RIGHT:
                 if (currentPos != Position.RIGHT) {
-                    translateAll(235, 0);
+                    translateAll(displacement, 0);
                     currentPos = getRightPosition(currentPos);
                 }
                 break;

@@ -216,7 +216,7 @@ public class Obstacle implements Runnable {
 
     @Override
     public void run() {
-        while (obstacle.getCurrentPoint().getY() <= Util.screensize.height) {
+        while (body.getBounds2D().getMinY() <= Util.screensize.height) {
             factor *= 1.03;
             scaleAll(1.03, 1.03);
 

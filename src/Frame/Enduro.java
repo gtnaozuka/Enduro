@@ -40,6 +40,7 @@ public class Enduro extends JPanel {
     private int scoreboard;
     private int randomTime;
     private boolean isInit, isGameOver;
+    private final double factor;
 
     private Timer timer;
     private static Thread tCreateObstacle;
@@ -49,6 +50,7 @@ public class Enduro extends JPanel {
     public Enduro() {
         scoreboard = 0;
         isInit = false;
+        factor = Util.screensize.width / 1225.0;
         ka = new Enduro.KeyboardAction();
 
         this.setPreferredSize(new Dimension(Util.screensize.width, Util.screensize.height));
@@ -56,6 +58,7 @@ public class Enduro extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
@@ -195,13 +198,13 @@ public class Enduro extends JPanel {
                 boolean hasBody = r.nextBoolean();
                 switch (r.nextInt(3)) {
                     case 0:
-                        obstacles[pos] = new Obstacle(-1.25, color, hasBody);
+                        obstacles[pos] = new Obstacle(-factor, color, hasBody);
                         break;
                     case 1:
                         obstacles[pos] = new Obstacle(0.0, color, hasBody);
                         break;
                     case 2:
-                        obstacles[pos] = new Obstacle(1.25, color, hasBody);
+                        obstacles[pos] = new Obstacle(factor, color, hasBody);
                         break;
                 }
                 obstacles[pos].gettUpdateObstacle().start();
