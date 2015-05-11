@@ -5,7 +5,6 @@ import Util.GeomTransform;
 import Util.Util;
 import java.awt.Color;
 import java.awt.geom.GeneralPath;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,84 +42,84 @@ public class Obstacle implements Runnable {
     private void initObstacle() {
         obstaclePoints = new ArrayList<>();
 
-        obstaclePoints.add(new Point(800, 300));
-        obstaclePoints.add(new Point(815, 305));
-        obstaclePoints.add(new Point(830, 300));
-        obstaclePoints.add(new Point(828, 282));
-        obstaclePoints.add(new Point(802, 282));
-        obstaclePoints.add(new Point(800, 300));
+        obstaclePoints.add(new Point(800.0, 300.0));
+        obstaclePoints.add(new Point(815.0, 305.0));
+        obstaclePoints.add(new Point(830.0, 300.0));
+        obstaclePoints.add(new Point(828.0, 282.0));
+        obstaclePoints.add(new Point(802.0, 282.0));
+        obstaclePoints.add(new Point(800.0, 300.0));
     }
 
     private void initHood() {
         hoodPoints = new ArrayList<>();
 
-        hoodPoints.add(new Point(805, 296));
-        hoodPoints.add(new Point(825, 296));
-        hoodPoints.add(new Point(825, 295));
-        hoodPoints.add(new Point(805, 295));
-        hoodPoints.add(new Point(805, 296));
+        hoodPoints.add(new Point(805.0, 296.0));
+        hoodPoints.add(new Point(825.0, 296.0));
+        hoodPoints.add(new Point(825.0, 295.0));
+        hoodPoints.add(new Point(805.0, 295.0));
+        hoodPoints.add(new Point(805.0, 296.0));
     }
 
     private void initWindow() {
         windowPoints = new ArrayList<>();
 
-        windowPoints.add(new Point(803, 284));
-        windowPoints.add(new Point(827, 284));
-        windowPoints.add(new Point(828, 290));
-        windowPoints.add(new Point(802, 290));
-        windowPoints.add(new Point(803, 284));
+        windowPoints.add(new Point(803.0, 284.0));
+        windowPoints.add(new Point(827.0, 284.0));
+        windowPoints.add(new Point(828.0, 290.0));
+        windowPoints.add(new Point(802.0, 290.0));
+        windowPoints.add(new Point(803.0, 284.0));
     }
 
     private void initLight() {
         lightPoints = new ArrayList<>();
 
-        lightPoints.add(new Point(802, 297));
-        lightPoints.add(new Point(806, 297));
-        lightPoints.add(new Point(806, 294));
-        lightPoints.add(new Point(802, 294));
-        lightPoints.add(new Point(802, 297));
+        lightPoints.add(new Point(802.0, 297.0));
+        lightPoints.add(new Point(806.0, 297.0));
+        lightPoints.add(new Point(806.0, 294.0));
+        lightPoints.add(new Point(802.0, 294.0));
+        lightPoints.add(new Point(802.0, 297.0));
 
-        lightPoints.add(new Point(828, 297));
-        lightPoints.add(new Point(824, 297));
-        lightPoints.add(new Point(824, 294));
-        lightPoints.add(new Point(828, 294));
-        lightPoints.add(new Point(828, 297));
+        lightPoints.add(new Point(828.0, 297.0));
+        lightPoints.add(new Point(824.0, 297.0));
+        lightPoints.add(new Point(824.0, 294.0));
+        lightPoints.add(new Point(828.0, 294.0));
+        lightPoints.add(new Point(828.0, 297.0));
     }
 
     private void initTire() {
         tirePoints = new ArrayList<>();
 
-        tirePoints.add(new Point(801, 300));
-        tirePoints.add(new Point(803, 305));
-        tirePoints.add(new Point(806, 305));
-        tirePoints.add(new Point(808, 299));
-        tirePoints.add(new Point(801, 300));
+        tirePoints.add(new Point(801.0, 300.0));
+        tirePoints.add(new Point(803.0, 305.0));
+        tirePoints.add(new Point(806.0, 305.0));
+        tirePoints.add(new Point(808.0, 299.0));
+        tirePoints.add(new Point(801.0, 300.0));
 
-        tirePoints.add(new Point(829, 300));
-        tirePoints.add(new Point(827, 305));
-        tirePoints.add(new Point(824, 305));
-        tirePoints.add(new Point(822, 299));
-        tirePoints.add(new Point(829, 300));
+        tirePoints.add(new Point(829.0, 300.0));
+        tirePoints.add(new Point(827.0, 305.0));
+        tirePoints.add(new Point(824.0, 305.0));
+        tirePoints.add(new Point(822.0, 299.0));
+        tirePoints.add(new Point(829.0, 300.0));
     }
 
     private void initBody() {
         bodyPoints = new ArrayList<>();
 
-        bodyPoints.add(new Point(802, 290));
-        bodyPoints.add(new Point(802, 275));
-        bodyPoints.add(new Point(828, 275));
-        bodyPoints.add(new Point(828, 290));
-        bodyPoints.add(new Point(802, 290));
+        bodyPoints.add(new Point(802.0, 290.0));
+        bodyPoints.add(new Point(802.0, 275.0));
+        bodyPoints.add(new Point(828.0, 275.0));
+        bodyPoints.add(new Point(828.0, 290.0));
+        bodyPoints.add(new Point(802.0, 290.0));
     }
 
     private void initPlate() {
         platePoints = new ArrayList<>();
 
-        platePoints.add(new Point(812, 301));
-        platePoints.add(new Point(818, 301));
-        platePoints.add(new Point(818, 304));
-        platePoints.add(new Point(812, 304));
-        platePoints.add(new Point(812, 304));
+        platePoints.add(new Point(812.0, 301.0));
+        platePoints.add(new Point(818.0, 301.0));
+        platePoints.add(new Point(818.0, 304.0));
+        platePoints.add(new Point(812.0, 304.0));
+        platePoints.add(new Point(812.0, 304.0));
     }
 
     private void update(boolean isInit) {
@@ -135,7 +134,7 @@ public class Obstacle implements Runnable {
         if (isInit) {
             scaleAll(0.5, 0.5);
             translateAll(Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX(),
-                    100 - obstacle.getBounds2D().getCenterY());
+                    100.0 - obstacle.getBounds2D().getCenterY());
         }
     }
 
@@ -221,7 +220,7 @@ public class Obstacle implements Runnable {
             
             double displacement = Util.calculateDisplacement(obstacle.getBounds2D().getCenterY());
             translateAll((Util.screensize.width * 0.5 - obstacle.getBounds2D().getCenterX()) + 
-                    direction * displacement, 0);
+                    direction * displacement, 0.0);
 
             Util.sleep(100);
         }

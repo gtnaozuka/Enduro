@@ -19,11 +19,11 @@ public class Sky {
     private void init() {
         skyPoints = new ArrayList<>();
 
-        skyPoints.add(new Point(0, 0));
-        skyPoints.add(new Point(Util.screensize.width, 0));
-        skyPoints.add(new Point(Util.screensize.width, 100));
-        skyPoints.add(new Point(0, 100));
-        skyPoints.add(new Point(0, 0));
+        skyPoints.add(new Point(0.0, 0.0));
+        skyPoints.add(new Point(Util.screensize.width, 0.0));
+        skyPoints.add(new Point(Util.screensize.width, 100.0));
+        skyPoints.add(new Point(0.0, 100.0));
+        skyPoints.add(new Point(0.0, 0.0));
     }
 
     private void update() {

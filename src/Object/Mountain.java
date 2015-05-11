@@ -19,15 +19,15 @@ public class Mountain {
     private void init() {
         mountainPoints = new ArrayList<>();
 
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150, 100));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 20));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50, 100));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150.0, 100.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50.0, 20.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50.0, 100.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 150.0, 100.0));
 
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 100));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50, 10));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 150, 100));
-        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50, 100));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50.0, 100.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 50.0, 10.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 + 150.0, 100.0));
+        mountainPoints.add(new Point(Util.screensize.width * 0.5 - 50.0, 100.0));
     }
 
     private void update() {

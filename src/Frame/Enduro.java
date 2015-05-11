@@ -81,6 +81,10 @@ public class Enduro extends JPanel {
         g2d.setColor(new Color(44, 176, 55));
         g2d.draw(landscape.getLandscape());
         g2d.fill(landscape.getLandscape());
+        
+        g2d.setColor(new Color(189, 208, 156));
+        g2d.draw(track.getCoasting());
+        g2d.fill(track.getCoasting());
 
         g2d.setColor(Color.gray.darker());
         g2d.draw(track.getTrack());
@@ -248,14 +252,14 @@ public class Enduro extends JPanel {
                 finish();
             }
 
-            double carHeight = car.getCar().getCurrentPoint().getY();
+            double carHeight = car.getCar().getBounds2D().getMaxY();
             double obstacleHeight;
             if (obstacles[indexOfOlderObstacle].hasBody()) {
                 obstacleHeight = obstacles[indexOfOlderObstacle].getBody().getBounds2D().getMinY();
             } else {
                 obstacleHeight = obstacles[indexOfOlderObstacle].getObstacle().getBounds2D().getMinY();
             }
-            if (carHeight < obstacleHeight && obstacleHeight < Util.screensize.height - 90) {
+            if (carHeight < obstacleHeight && obstacleHeight < Util.screensize.height - 90.0) {
                 scoreboard++;
                 indexOfOlderObstacle = (indexOfOlderObstacle + 1) % MAX_OBSTACLES;
             }

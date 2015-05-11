@@ -19,17 +19,17 @@ public class Landscape {
     private void init() {
         landscapePoints = new ArrayList<>();
 
-        landscapePoints.add(new Point(Util.screensize.width * 0.5 - 10, 100));
-        landscapePoints.add(new Point(225, Util.screensize.height));
-        landscapePoints.add(new Point(0, Util.screensize.height));
-        landscapePoints.add(new Point(0, 100));
-        landscapePoints.add(new Point(Util.screensize.width * 0.5 - 10, 100));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 - 20.0, 100.0));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 - 550.0, Util.screensize.height));
+        landscapePoints.add(new Point(0.0, Util.screensize.height));
+        landscapePoints.add(new Point(0.0, 100.0));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 - 20.0, 100.0));
 
-        landscapePoints.add(new Point(Util.screensize.width * 0.5 + 10, 100));
-        landscapePoints.add(new Point(Util.screensize.width - 225, Util.screensize.height));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 + 20.0, 100.0));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 + 550.0, Util.screensize.height));
         landscapePoints.add(new Point(Util.screensize.width, Util.screensize.height));
-        landscapePoints.add(new Point(Util.screensize.width, 100));
-        landscapePoints.add(new Point(Util.screensize.width * 0.5 + 10, 100));
+        landscapePoints.add(new Point(Util.screensize.width, 100.0));
+        landscapePoints.add(new Point(Util.screensize.width * 0.5 + 20.0, 100.0));
     }
 
     private void update() {

@@ -38,7 +38,7 @@ public class Car {
 
     public Car() {
         currentPos = Position.CENTER;
-        displacement = Util.calculateDisplacement(Util.screensize.height - 150);
+        displacement = Util.calculateDisplacement(Util.screensize.height - 150.0);
         init();
         update(true);
     }
@@ -56,115 +56,115 @@ public class Car {
     private void initCar() {
         carPoints = new ArrayList<>();
 
-        carPoints.add(new Point(900, 940));
-        carPoints.add(new Point(1000, 940));
-        carPoints.add(new Point(1010, 930));
-        carPoints.add(new Point(1010, 915));
-        carPoints.add(new Point(890, 915));
-        carPoints.add(new Point(890, 930));
-        carPoints.add(new Point(900, 940));
+        carPoints.add(new Point(900.0, 940.0));
+        carPoints.add(new Point(1000.0, 940.0));
+        carPoints.add(new Point(1010.0, 930.0));
+        carPoints.add(new Point(1010.0, 915.0));
+        carPoints.add(new Point(890.0, 915.0));
+        carPoints.add(new Point(890.0, 930.0));
+        carPoints.add(new Point(900.0, 940.0));
 
-        carPoints.add(new Point(885, 915));
-        carPoints.add(new Point(895, 900));
-        carPoints.add(new Point(1004, 900));
-        carPoints.add(new Point(1014, 915));
-        carPoints.add(new Point(885, 915));
+        carPoints.add(new Point(885.0, 915.0));
+        carPoints.add(new Point(895.0, 900.0));
+        carPoints.add(new Point(1004.0, 900.0));
+        carPoints.add(new Point(1014.0, 915.0));
+        carPoints.add(new Point(885.0, 915.0));
 
-        carPoints.add(new Point(900, 900));
-        carPoints.add(new Point(920, 875));
-        carPoints.add(new Point(980, 875));
-        carPoints.add(new Point(1000, 900));
-        carPoints.add(new Point(900, 900));
+        carPoints.add(new Point(900.0, 900.0));
+        carPoints.add(new Point(920.0, 875.0));
+        carPoints.add(new Point(980.0, 875.0));
+        carPoints.add(new Point(1000.0, 900.0));
+        carPoints.add(new Point(900.0, 900.0));
     }
 
     private void initYellowLight() {
         yellowLightPoints = new ArrayList<>();
 
-        yellowLightPoints.add(new Point(897, 910));
-        yellowLightPoints.add(new Point(900, 905));
-        yellowLightPoints.add(new Point(920, 905));
-        yellowLightPoints.add(new Point(920, 910));
-        yellowLightPoints.add(new Point(897, 910));
+        yellowLightPoints.add(new Point(897.0, 910.0));
+        yellowLightPoints.add(new Point(900.0, 905.0));
+        yellowLightPoints.add(new Point(920.0, 905.0));
+        yellowLightPoints.add(new Point(920.0, 910.0));
+        yellowLightPoints.add(new Point(897.0, 910.0));
 
-        yellowLightPoints.add(new Point(1002, 910));
-        yellowLightPoints.add(new Point(1000, 905));
-        yellowLightPoints.add(new Point(979, 905));
-        yellowLightPoints.add(new Point(979, 910));
-        yellowLightPoints.add(new Point(1002, 910));
+        yellowLightPoints.add(new Point(1002.0, 910.0));
+        yellowLightPoints.add(new Point(1000.0, 905.0));
+        yellowLightPoints.add(new Point(979.0, 905.0));
+        yellowLightPoints.add(new Point(979.0, 910.0));
+        yellowLightPoints.add(new Point(1002.0, 910.0));
     }
 
     private void initRedLight() {
         redLightPoints = new ArrayList<>();
 
-        redLightPoints.add(new Point(897, 910));
-        redLightPoints.add(new Point(920, 910));
-        redLightPoints.add(new Point(920, 915));
-        redLightPoints.add(new Point(895, 915));
-        redLightPoints.add(new Point(897, 910));
+        redLightPoints.add(new Point(897.0, 910.0));
+        redLightPoints.add(new Point(920.0, 910.0));
+        redLightPoints.add(new Point(920.0, 915.0));
+        redLightPoints.add(new Point(895.0, 915.0));
+        redLightPoints.add(new Point(897.0, 910.0));
 
-        redLightPoints.add(new Point(1002, 910));
-        redLightPoints.add(new Point(979, 910));
-        redLightPoints.add(new Point(979, 915));
-        redLightPoints.add(new Point(1005, 915));
-        redLightPoints.add(new Point(1002, 910));
+        redLightPoints.add(new Point(1002.0, 910.0));
+        redLightPoints.add(new Point(979.0, 910.0));
+        redLightPoints.add(new Point(979.0, 915.0));
+        redLightPoints.add(new Point(1005.0, 915.0));
+        redLightPoints.add(new Point(1002.0, 910.0));
     }
 
     private void initRear() {
         rearPoints = new ArrayList<>();
 
-        rearPoints.add(new Point(920, 915));
-        rearPoints.add(new Point(920, 905));
-        rearPoints.add(new Point(979, 907));
-        rearPoints.add(new Point(920, 907));
-        rearPoints.add(new Point(920, 909));
-        rearPoints.add(new Point(979, 909));
-        rearPoints.add(new Point(979, 911));
-        rearPoints.add(new Point(920, 911));
-        rearPoints.add(new Point(920, 913));
-        rearPoints.add(new Point(979, 913));
-        rearPoints.add(new Point(979, 915));
-        rearPoints.add(new Point(979, 905));
+        rearPoints.add(new Point(920.0, 915.0));
+        rearPoints.add(new Point(920.0, 905.0));
+        rearPoints.add(new Point(979.0, 907.0));
+        rearPoints.add(new Point(920.0, 907.0));
+        rearPoints.add(new Point(920.0, 909.0));
+        rearPoints.add(new Point(979.0, 909.0));
+        rearPoints.add(new Point(979.0, 911.0));
+        rearPoints.add(new Point(920.0, 911.0));
+        rearPoints.add(new Point(920.0, 913.0));
+        rearPoints.add(new Point(979.0, 913.0));
+        rearPoints.add(new Point(979.0, 915.0));
+        rearPoints.add(new Point(979.0, 905.0));
     }
 
     private void initPlate() {
         platePoints = new ArrayList<>();
 
-        platePoints.add(new Point(940, 925));
-        platePoints.add(new Point(960, 925));
-        platePoints.add(new Point(960, 935));
-        platePoints.add(new Point(940, 935));
-        platePoints.add(new Point(940, 925));
+        platePoints.add(new Point(940.0, 925.0));
+        platePoints.add(new Point(960.0, 925.0));
+        platePoints.add(new Point(960.0, 935.0));
+        platePoints.add(new Point(940.0, 935.0));
+        platePoints.add(new Point(940.0, 925.0));
     }
 
     private void initTire() {
         tirePoints = new ArrayList<>();
 
-        tirePoints.add(new Point(900, 940));
-        tirePoints.add(new Point(905, 945));
-        tirePoints.add(new Point(925, 945));
-        tirePoints.add(new Point(930, 940));
-        tirePoints.add(new Point(900, 940));
+        tirePoints.add(new Point(900.0, 940.0));
+        tirePoints.add(new Point(905.0, 945.0));
+        tirePoints.add(new Point(925.0, 945.0));
+        tirePoints.add(new Point(930.0, 940.0));
+        tirePoints.add(new Point(900.0, 940.0));
 
-        tirePoints.add(new Point(1000, 940));
-        tirePoints.add(new Point(995, 945));
-        tirePoints.add(new Point(975, 945));
-        tirePoints.add(new Point(970, 940));
-        tirePoints.add(new Point(1000, 940));
+        tirePoints.add(new Point(1000.0, 940.0));
+        tirePoints.add(new Point(995.0, 945.0));
+        tirePoints.add(new Point(975.0, 945.0));
+        tirePoints.add(new Point(970.0, 940.0));
+        tirePoints.add(new Point(1000.0, 940.0));
     }
 
     private void initWindow() {
         windowPoints = new ArrayList<>();
 
-        windowPoints.add(new Point(910, 900));
-        windowPoints.add(new Point(925, 880));
-        windowPoints.add(new Point(975, 880));
-        windowPoints.add(new Point(990, 900));
-        windowPoints.add(new Point(910, 900));
+        windowPoints.add(new Point(910.0, 900.0));
+        windowPoints.add(new Point(925.0, 880.0));
+        windowPoints.add(new Point(975.0, 880.0));
+        windowPoints.add(new Point(990.0, 900.0));
+        windowPoints.add(new Point(910.0, 900.0));
 
-        windowPoints.add(new Point(940, 880));
-        windowPoints.add(new Point(950, 885));
-        windowPoints.add(new Point(960, 880));
-        windowPoints.add(new Point(940, 880));
+        windowPoints.add(new Point(940.0, 880.0));
+        windowPoints.add(new Point(950.0, 885.0));
+        windowPoints.add(new Point(960.0, 880.0));
+        windowPoints.add(new Point(940.0, 880.0));
     }
 
     private void update(boolean isInit) {
@@ -179,7 +179,7 @@ public class Car {
         if (isInit) {
             scaleAll(0.75, 0.75);
             translateAll(Util.screensize.width * 0.5 - car.getBounds2D().getCenterX(),
-                    Util.screensize.height - 150 - car.getBounds2D().getCenterY());
+                    Util.screensize.height - 150.0 - car.getBounds2D().getCenterY());
         }
     }
 
@@ -274,13 +274,13 @@ public class Car {
         switch (keyCode) {
             case KeyEvent.VK_LEFT:
                 if (currentPos != Position.LEFT) {
-                    translateAll(-displacement, 0);
+                    translateAll(-displacement, 0.0);
                     currentPos = getLeftPosition(currentPos);
                 }
                 break;
             case KeyEvent.VK_RIGHT:
                 if (currentPos != Position.RIGHT) {
-                    translateAll(displacement, 0);
+                    translateAll(displacement, 0.0);
                     currentPos = getRightPosition(currentPos);
                 }
                 break;
